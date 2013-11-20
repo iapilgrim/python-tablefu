@@ -72,7 +72,7 @@ class TableFu(object):
             if 'dialect' in options:
                 csv_options['dialect'] = options.pop('dialect')
             reader = csv.reader(table, **csv_options)
-            self.table = [row for row in reader if not row]
+            self.table = [row for row in reader]
         else:
             self.table = table
         self.default_columns = self.table.pop(0)
